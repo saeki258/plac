@@ -43,7 +43,7 @@ self.addEventListener('notificationclick', function(event) {
       }
     }
     if (clients.openWindow) {
-      return clients.openWindow('/');
+      return clients.openWindow('https://www.78it.com');
     }
   }));
 });
