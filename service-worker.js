@@ -14,7 +14,7 @@ self.addEventListener('push', function(event) {
     body = event.data.json().body;
     icon = event.data.json().icon;
     tag = event.data.json().tag;
-    mail = event.data.json().mail;
+    mail = 'test@test.com';
   }
 
   event.waitUntil(
