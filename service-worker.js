@@ -7,6 +7,7 @@ self.addEventListener('push', function(event) {
   var body = 'Free Shipping Friday - TVs & Projectors';
   var icon = 'https://www.videopro.com.au/images/product/micro/8491_1.jpg';
   var tag = 'Push Tag';
+  var mail;
 
   if (event.data) {
     console.log(event.data.json());
