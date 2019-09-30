@@ -14,13 +14,15 @@ self.addEventListener('push', function(event) {
     body = event.data.json().body;
     icon = event.data.json().icon;
     tag = event.data.json().tag;
+    mail = event.data.json().mail;
   }
 
   event.waitUntil(
     self.registration.showNotification(title, {
       body: body,
       icon: icon,
-      tag: tag
+      tag: tag,
+      mail: mail
     })
   );
 });
@@ -30,7 +32,7 @@ self.addEventListener('notificationclick', function(event) {
   // Android doesn’t close the notification when you click on it
   // See: http://crbug.com/463146
   event.notification.close();
-  location.href = 'https://www.78it.com/';
+  clients.openWindow('https://pub.s7.exacttarget.com/r3hy11okdyx?title=' + event.notification.title + '&tag=' + event.notification.tag + '&mail=' + event.notification.mail)
 
   // This looks to see if the current is already open and
   // focuses if it is
